@@ -6,15 +6,15 @@
   <title><?php echo $__env->yieldContent('title'); ?></title>
 
   <!-- STYLESHEET -->
-  <?php echo $__env->make('layouts.backend-member.stylesheet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php echo $__env->make('layouts.backend-include.stylesheet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
   <!-- NAVBAR -->
-  <?php echo $__env->make('layouts.backend-dashboard.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php echo $__env->make('layouts.backend-include.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <!-- SIDEBAR -->
-  <?php echo $__env->make('layouts.backend-dashboard.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php echo $__env->make('layouts.backend-include.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -42,7 +42,7 @@
   <!-- /.content-wrapper -->
 
   <!-- FOOTER -->
-  <?php echo $__env->make('layouts.backend-dashboard.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php echo $__env->make('layouts.backend-include.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -53,24 +53,8 @@
 <!-- ./wrapper -->
 
 <!-- JAVASCRIPT -->
-<?php echo $__env->make('layouts.backend-member.javascript', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('layouts.backend-include.javascript', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <!-- Page specific script -->
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
+<?php echo $__env->yieldPushContent('script'); ?>
 </body>
 </html><?php /**PATH C:\xampp\htdocs\undergroundblog\resources\views/layouts/backend-member/app.blade.php ENDPATH**/ ?>

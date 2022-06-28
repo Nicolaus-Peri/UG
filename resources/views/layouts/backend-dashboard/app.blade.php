@@ -6,15 +6,15 @@
         <title>@yield('title')</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        @include('layouts.backend-dashboard.stylesheet')
+        @include('layouts.backend-include.stylesheet')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrappper">
 
 <!-- NAVBAR -->
-@include('layouts.backend-dashboard.navbar')
+@include('layouts.backend-include.navbar')
 <!-- SIDEBAR -->
-@include('layouts.backend-dashboard.sidebar')
+@include('layouts.backend-include.sidebar')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -41,7 +41,7 @@
   </div>
   <!-- /.content-wrapper -->
   <!-- FOOTER -->
-  @include('layouts.backend-dashboard.footer')
+  @include('layouts.backend-include.footer')
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -51,6 +51,6 @@
 </div>
 <!-- ./wrapper -->
 <!-- JAVASCRIPT -->
-@include('layouts.backend-dashboard.javascript')
+@include('layouts.backend-include.javascript')
 </body>
 </html>

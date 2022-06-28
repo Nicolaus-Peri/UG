@@ -16,5 +16,13 @@
   <link rel="stylesheet" href="{{asset('assets/AdminLTE/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('assets/AdminLTE/plugins/summernote/summernote-bs4.min.css')}}">
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="{{asset('assets/AdminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{asset('assets/AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/AdminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/AdminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+  <!-- fullCalendar -->
+  <link rel="stylesheet" href="{{asset('assets/AdminLTE/plugins/fullcalendar/main.css')}}">

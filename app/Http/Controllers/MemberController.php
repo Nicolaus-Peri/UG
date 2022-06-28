@@ -12,11 +12,9 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $data['title'] = 'Member';
-        $data['m'] = $request->get('m');
-        $data['members'] = Member::where('nama', 'like','%', $data['m'] . '%')->get();
+        $data['members'] = Member::orderBy('id_member','desc')->paginate(10);
         return view('Member.index', $data);
     }
 
@@ -27,8 +25,7 @@ class MemberController extends Controller
      */
     public function create()
     {
-        $data['title'] = 'Tambah Member';
-
+        return view('Member.index_create');
     }
 
     /**
@@ -39,7 +36,20 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required',
+            'email' => 'required',
+        ]);
+        $member = new Member;
+        $member->nama = $request->nama;
+        $member->alamat = $request->alamat;
+        $member->no_telp = $request->no_telp;
+        $member->email = $request->email;
+        $member->save();
+        return redirect()->route('Member.index')
+        ->with('sukses', 'Berhasil Menambahkan Member.');
     }
 
     /**
@@ -50,7 +60,7 @@ class MemberController extends Controller
      */
     public function show(Member $member)
     {
-        //
+        return view('Member.show', compact('Member'));;
     }
 
     /**
@@ -61,7 +71,7 @@ class MemberController extends Controller
      */
     public function edit(Member $member)
     {
-        //
+        return view('Member.index_edit', compact('Member'));
     }
 
     /**
@@ -73,7 +83,20 @@ class MemberController extends Controller
      */
     public function update(Request $request, Member $member)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required',
+            'email' => 'required',
+        ]);
+        $member = Member::find($id_member);
+        $member->nama = $request->nama;
+        $member->alamat = $request->alamat;
+        $member->no_telp = $request->no_telp;
+        $member->email = $request->email;
+        $member->save();
+        return redirect()->route('Member.index')
+        ->with('sukses','Berhasil Mengganti Data Member');
     }
 
     /**
@@ -84,6 +107,7 @@ class MemberController extends Controller
      */
     public function destroy(Member $member)
     {
-        //
+        return redirect()->route('Member.index')
+        ->with('sukses', 'Berhasil Menghapus Data Member');
     }
 }

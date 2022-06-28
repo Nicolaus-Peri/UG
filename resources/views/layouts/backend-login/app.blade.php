@@ -6,7 +6,7 @@
   <title>@yield('title')</title>
 
   <!-- STYLESHEET -->
-  @include('layouts.backend-login.stylesheet')
+  @include('layouts.backend-include.stylesheet')
 </head>
 <body class="hold-transition login-page">
 
@@ -14,6 +14,6 @@
 @yield('content')
 
 <!-- JAVASCRIPT -->
-@include('layouts.backend-login.javascript')
+@include('layouts.backend-include.javascript')
 </body>
 </html>

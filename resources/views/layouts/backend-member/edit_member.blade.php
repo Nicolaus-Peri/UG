@@ -6,15 +6,16 @@
   <title>@yield('title')</title>
 
   <!-- STYLESHEET -->
-  @include('layouts.backend-dashboard.stylesheet')
+  @include('layouts.backend-include.stylesheet')
 
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-  <!-- NAVBAR -->
-  @include('layouts.backend-dashboard.navbar')
-  <!-- SIDEBAR -->
-  @include('layouts.backend-dashboard.sidebar')
+    <!-- NAVBAR -->
+    @include('layouts.backend-include.navbar')
+    <!-- SIDEBAR -->
+    @include('layouts.backend-include.sidebar')
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -22,12 +23,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>General Form</h1>
+            <h1>Profile</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">General Form</li>
+              <li class="breadcrumb-item active">User Profile</li>
             </ol>
           </div>
         </div>
@@ -39,9 +40,8 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
   <!-- FOOTER -->
-  @include('layouts.backend-dashboard.footer')
+  @include('layouts.backend-include.footer')
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -52,12 +52,7 @@
 <!-- ./wrapper -->
 
 <!-- JAVASCRIPT -->
-@include('layouts.backend-pendaftaran.javascript')
-<!-- Page specific script -->
-<script>
-$(function () {
-  bsCustomFileInput.init();
-});
-</script>
+@include('layouts.backend-include.javascript')
+
 </body>
 </html>

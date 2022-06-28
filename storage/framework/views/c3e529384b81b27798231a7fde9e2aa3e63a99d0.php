@@ -5,55 +5,41 @@
               <!-- /.card-header -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
-                <a class="btn btn-success" href="#">Create</a> 
+                <h3 class="card-title col-10">DataTable with default features</h3>
+                  <a class="btn btn-success col-2" href="<?php echo e(route('member.create')); ?>">Create</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>Nomor Member</th>
-                    <th>Nama</th>
-                    <th>Alamat</th>
-                    <th>Nomor Telepon</th>
-                    <th>Status</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                    <?php $__empty_1 = true; $__currentLoopData = @members; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-                  <tr>
-                    <td><?php echo e($member->id); ?></td>
-                    <td><?php echo e($member->nama); ?></td>
-                    <td><?php echo e($member->alamat); ?>}</td>
-                    <td> <?php echo e($member->no_telp); ?></td>
-                    <td>Active</td>
-                    <td class="text-center">
-                      <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="<?php echo e(route('posts.destroy', $post->id)); ?>" method="POST">
-                      <a href="<?php echo e(route('posts.edit', $post->id)); ?>" class="btn btn-sm btn-primary">EDIT</a>
-                      <?php echo csrf_field(); ?>
-                      <?php echo method_field('DELETE'); ?>
-                      <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
-                    </form>
-                  </td>
-                  </tr>
-                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-                  <div class="alert alert-danger">
-                    Data Member belum tersedia
+                <?php if($message = Session::get('success')): ?>
+                  <div class="alert alert-success">
+                  <p><?php echo e($message); ?></p>
                   </div>
                   <?php endif; ?>
-                  </tbody>
-                  <tfoot>
+                  <table id="example1" class="table table-bordered table-striped">
                   <tr>
-                    <th>Nomor Member</th>
-                    <th>Nama</th>
-                    <th>Alamat</th>
-                    <th>Nomor Telepon</th>
-                    <th>Status</th>
+                  <th>ID</th>
+                  <th>Nama</th>
+                  <th>Alamat</th>
+                  <th>No Telp</th>
+                  <th width="280px">Action</th>
                   </tr>
-                  </tfoot>
-                </table>
-                <?php echo e($members->links()); ?>
+                  <?php $__currentLoopData = $members; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                  <tr>
+                  <td><?php echo e($member->id_member); ?></td>
+                  <td><?php echo e($member->nama); ?></td>
+                  <td><?php echo e($member->alamat); ?></td>
+                  <td><?php echo e($member->no_telp); ?></td>
+                  <td>
+                  <a class="btn btn-primary" href="#">Edit</a>
+                  <?php echo csrf_field(); ?>
+                  <?php echo method_field('DELETE'); ?>
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
+                  </td>
+                  </tr>
+                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                  </table>
+                  <?php echo $members->links(); ?>
 
               </div>
               <!-- /.card-body -->

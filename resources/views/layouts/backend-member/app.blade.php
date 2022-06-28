@@ -6,15 +6,15 @@
   <title>@yield('title')</title>
 
   <!-- STYLESHEET -->
-  @include('layouts.backend-member.stylesheet')
+  @include('layouts.backend-include.stylesheet')
 
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
   <!-- NAVBAR -->
-  @include('layouts.backend-dashboard.navbar')
+  @include('layouts.backend-include.navbar')
   <!-- SIDEBAR -->
-  @include('layouts.backend-dashboard.sidebar')
+  @include('layouts.backend-include.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -42,7 +42,7 @@
   <!-- /.content-wrapper -->
 
   <!-- FOOTER -->
-  @include('layouts.backend-dashboard.footer')
+  @include('layouts.backend-include.footer')
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -53,24 +53,8 @@
 <!-- ./wrapper -->
 
 <!-- JAVASCRIPT -->
-@include('layouts.backend-member.javascript')
+@include('layouts.backend-include.javascript')
 <!-- Page specific script -->
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
+@stack('script')
 </body>
 </html>

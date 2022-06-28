@@ -4,3 +4,6 @@
 @section('content')
     @include('Member.html')
 @endsection
+@push('script')
+    @include('Member.script')
+@endpush
