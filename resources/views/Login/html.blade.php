@@ -35,7 +35,8 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="button" href="{{url('member')}}" class="btn btn-primary btn-block">Sign In</button>
+            <!-- <button type="submit" class="btn btn-primary btn-block">Sign In</button> -->
+            <a href="{{url('dashboard')}}" class="btn btn-primary btn-block">Sign In</a>
           </div>
           <!-- /.col -->
         </div>
