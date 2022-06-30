@@ -16,7 +16,7 @@
                 @endif
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="#" method="POST" enctype="multipart/form-data">
+              <form action="{{route('member.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">

@@ -1,4 +1,4 @@
-@extends('layouts','backend-member.edit_member')
+@extends('layouts.backend-member.edit_member')
 @section('title', 'Edit Data Member')
 
 @section('content')

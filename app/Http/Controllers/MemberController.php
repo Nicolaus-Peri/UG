@@ -41,15 +41,19 @@ class MemberController extends Controller
             'alamat' => 'required',
             'no_telp' => 'required',
             'email' => 'required',
+            'password' => 'required'
         ]);
         $member = new Member;
         $member->nama = $request->nama;
         $member->alamat = $request->alamat;
         $member->no_telp = $request->no_telp;
         $member->email = $request->email;
+        $member->password = $request->password;
+        $member->isActive = false;
+        $member->join_date = date('Y-m-d H:i:s');
+        $member->exit_date = date('Y-m-d H:i:s');
         $member->save();
-        return redirect()->route('Member.index')
-        ->with('sukses', 'Berhasil Menambahkan Member.');
+        return redirect('member');
     }
 
     /**
@@ -60,7 +64,7 @@ class MemberController extends Controller
      */
     public function show(Member $member)
     {
-        return view('Member.show', compact('members'));;
+        return redirect('member');
     }
 
     /**
@@ -71,7 +75,7 @@ class MemberController extends Controller
      */
     public function edit(Member $member)
     {
-        return view('Member.index_edit', compact('Member'));
+        return view('Member.index_edit', compact('member'));
     }
 
     /**
@@ -88,15 +92,16 @@ class MemberController extends Controller
             'alamat' => 'required',
             'no_telp' => 'required',
             'email' => 'required',
+            'password' => 'required'
         ]);
-        $member = Member::find($id_member);
+        $member = Member::find($member->id_member);
         $member->nama = $request->nama;
         $member->alamat = $request->alamat;
         $member->no_telp = $request->no_telp;
         $member->email = $request->email;
+        $member->password = $request->password;
         $member->save();
-        return redirect()->route('Member.index')
-        ->with('sukses','Berhasil Mengganti Data Member');
+        return redirect('member');
     }
 
     /**
@@ -107,7 +112,6 @@ class MemberController extends Controller
      */
     public function destroy(Member $member)
     {
-        return redirect()->route('Member.index')
-        ->with('sukses', 'Berhasil Menghapus Data Member');
+        return redirect('member');
     }
 }

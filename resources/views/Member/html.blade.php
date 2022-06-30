@@ -23,14 +23,14 @@
                   <th>No Telp</th>
                   <th width="280px">Action</th>
                   </tr>
-                  @foreach ($members as $member)
+                  @foreach ($members as $member )
                   <tr>
-                  <td>{{ $member->id_member }}</td>
+                  <td>{{ $loop->index + 1 }}</td>
                   <td>{{ $member->nama }}</td>
                   <td>{{ $member->alamat }}</td>
                   <td>{{ $member->no_telp }}</td>
                   <td>
-                  <a class="btn btn-primary" href="{{route('member.edit', $member->id_member)}}">Edit</a>
+                  <a class="btn btn-primary" href="{{route('member.edit', $member)}}">Edit</a>
                   @csrf
                   @method('DELETE')
                   <button type="submit" class="btn btn-danger">Delete</button>
