@@ -60,7 +60,7 @@ class MemberController extends Controller
      */
     public function show(Member $member)
     {
-        return view('Member.show', compact('Member'));;
+        return view('Member.show', compact('members'));;
     }
 
     /**

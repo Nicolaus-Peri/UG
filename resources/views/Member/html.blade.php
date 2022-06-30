@@ -30,7 +30,7 @@
                   <td>{{ $member->alamat }}</td>
                   <td>{{ $member->no_telp }}</td>
                   <td>
-                  <a class="btn btn-primary" href="#">Edit</a>
+                  <a class="btn btn-primary" href="{{route('member.edit', $member->id_member)}}">Edit</a>
                   @csrf
                   @method('DELETE')
                   <button type="submit" class="btn btn-danger">Delete</button>

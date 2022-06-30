@@ -30,7 +30,7 @@
                   <td><?php echo e($member->alamat); ?></td>
                   <td><?php echo e($member->no_telp); ?></td>
                   <td>
-                  <a class="btn btn-primary" href="#">Edit</a>
+                  <a class="btn btn-primary" href="<?php echo e(route('member.edit', $member->id_member)); ?>">Edit</a>
                   <?php echo csrf_field(); ?>
                   <?php echo method_field('DELETE'); ?>
                   <button type="submit" class="btn btn-danger">Delete</button>

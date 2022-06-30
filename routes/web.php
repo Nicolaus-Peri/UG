@@ -25,7 +25,7 @@ use App\Http\Controllers\JadwalController;
 Route::get('/', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::resource('members', MemberController::class);
+Route::resource('/member', MemberController::class);
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/personaltrainer', [PersonaltrainerController::class, 'index']);
 Route::resource('jadwal', JadwalController::class);

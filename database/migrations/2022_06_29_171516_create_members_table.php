@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('no_telp');
             $table->string('email');
             $table->string('password');
+            $table->dateTime('join_date');
+            $table->boolean('isActive');
+            $table->dateTime('exit_date');
             $table->timestamps();
         });
     }
