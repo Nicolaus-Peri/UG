@@ -23,9 +23,10 @@
                   <th>No Telp</th>
                   <th width="280px">Action</th>
                   </tr>
+                  <?php $count = 1; ?> 
                   @foreach ($members as $member )
                   <tr>
-                  <td>{{ $loop->index + 1 }}</td>
+                  <td>{{ $members->perPage() * ($members->currentPage()-1) + $count }}</td>
                   <td>{{ $member->nama }}</td>
                   <td>{{ $member->alamat }}</td>
                   <td>{{ $member->no_telp }}</td>
@@ -37,6 +38,7 @@
                   </form>
                   </td>
                   </tr>
+                  <?php $count++; ?>
                   @endforeach
                   </table>
                   {!! $members->links() !!}

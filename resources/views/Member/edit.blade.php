@@ -48,13 +48,13 @@
                     @error('email')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                     <label for="InputPassword">Password</label>
                     <input type="password" class="form-control" name="password" value="{{$member->password}}" placeholder="Masukkan Password">
                   </div>
                     @error('password')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
+                    @enderror -->
                 </div>
                 <!-- /.card-body -->
 

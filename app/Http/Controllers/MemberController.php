@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Member;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class MemberController extends Controller
 {
@@ -48,7 +49,7 @@ class MemberController extends Controller
         $member->alamat = $request->alamat;
         $member->no_telp = $request->no_telp;
         $member->email = $request->email;
-        $member->password = $request->password;
+        $member->password = Hash::make($request->password);
         $member->isActive = false;
         $member->join_date = date('Y-m-d H:i:s');
         $member->exit_date = date('Y-m-d H:i:s');
@@ -92,14 +93,14 @@ class MemberController extends Controller
             'alamat' => 'required',
             'no_telp' => 'required',
             'email' => 'required',
-            'password' => 'required'
+            // 'password' => 'required'
         ]);
         $member = Member::find($member->id_member);
         $member->nama = $request->nama;
         $member->alamat = $request->alamat;
         $member->no_telp = $request->no_telp;
         $member->email = $request->email;
-        $member->password = $request->password;
+        // $member->password = $request->password;
         $member->save();
         return redirect('member');
     }
