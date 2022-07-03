@@ -27,14 +27,12 @@
                   @foreach ($members as $member )
                   <tr>
                   <td>{{ $members->perPage() * ($members->currentPage()-1) + $count }}</td>
-                  <td>{{ $member->nama }}</td>
+                  <td><a href="{{url('/dashboard')}}" class="nav-link">{{ $member->nama }}</a></td>
                   <td>{{ $member->alamat }}</td>
                   <td>{{ $member->no_telp }}</td>
                   <td>
                   <a class="btn btn-primary" href="{{route('member.edit', $member)}}">Edit</a>
                   @csrf
-                  @method('DELETE')
-                  <button type="submit" class="btn btn-danger">Delete</button>
                   </form>
                   </td>
                   </tr>

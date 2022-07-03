@@ -6,7 +6,7 @@
   <title>@yield('title')</title>
 
   <!-- STYLESHEET -->
-  @include('layouts.backend-register.stylesheet')
+  @include('layouts.backend-include.stylesheet')
 
 </head>
 <!-- REGISTER -->
@@ -14,6 +14,6 @@
 <!-- /.register-box -->
 
 <!-- JAVASCRIPT -->
-@include('layouts.backend-register.javascript')
+@include('layouts.backend-include.javascript')
 </body>
 </html>

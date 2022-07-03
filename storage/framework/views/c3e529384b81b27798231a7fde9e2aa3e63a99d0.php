@@ -23,20 +23,20 @@
                   <th>No Telp</th>
                   <th width="280px">Action</th>
                   </tr>
+                  <?php $count = 1; ?> 
                   <?php $__currentLoopData = $members; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                   <tr>
-                  <td><?php echo e($member->id_member); ?></td>
-                  <td><?php echo e($member->nama); ?></td>
+                  <td><?php echo e($members->perPage() * ($members->currentPage()-1) + $count); ?></td>
+                  <td><a href="<?php echo e(url('/dashboard')); ?>" class="nav-link"><?php echo e($member->nama); ?></a></td>
                   <td><?php echo e($member->alamat); ?></td>
                   <td><?php echo e($member->no_telp); ?></td>
                   <td>
-                  <a class="btn btn-primary" href="<?php echo e(route('member.edit', $member->id_member)); ?>">Edit</a>
+                  <a class="btn btn-primary" href="<?php echo e(route('member.edit', $member)); ?>">Edit</a>
                   <?php echo csrf_field(); ?>
-                  <?php echo method_field('DELETE'); ?>
-                  <button type="submit" class="btn btn-danger">Delete</button>
                   </form>
                   </td>
                   </tr>
+                  <?php $count++; ?>
                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </table>
                   <?php echo $members->links(); ?>

@@ -1,12 +1,13 @@
 <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-3">
-            <div class="sticky-top mb-3">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title">Draggable Events</h4>
-                </div>
+          <div class="col-12">
+              <!-- /.card-header -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title col-10">Jadwal</h3>
+                  <a class="btn btn-success col-2" href="{{route('jadwal.create')}}">Create</a>
+              </div>
                 <div class="card-body">
                   <!-- the events -->
                   <div id="external-events">

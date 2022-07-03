@@ -15,7 +15,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $data['members'] = Member::orderBy('id_member','desc')->paginate(10);
+        $data['members'] = Member::orderBy('id','desc')->paginate(10);
         return view('Member.index', $data);
     }
 
@@ -95,7 +95,7 @@ class MemberController extends Controller
             'email' => 'required',
             // 'password' => 'required'
         ]);
-        $member = Member::find($member->id_member);
+        $member = Member::find($member->id);
         $member->nama = $request->nama;
         $member->alamat = $request->alamat;
         $member->no_telp = $request->no_telp;

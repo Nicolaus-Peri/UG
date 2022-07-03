@@ -35,7 +35,8 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <!-- <button type="submit" class="btn btn-primary btn-block">Sign In</button> -->
+            <a href="<?php echo e(url('dashboard')); ?>" class="btn btn-primary btn-block">Sign In</a>
           </div>
           <!-- /.col -->
         </div>
@@ -55,7 +56,7 @@
         <a href="forgot-password.html">I forgot my password</a>
       </p>
       <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
+        <a href="<?php echo e(url('/register')); ?>" class="text-center">Register a new membership</a>
       </p>
     </div>
     <!-- /.card-body -->

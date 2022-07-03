@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Jadwal;
+use App\Models\Trainer;
 use Illuminate\Http\Request;
 
-class JadwalController extends Controller
+class TrainerMemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class JadwalController extends Controller
      */
     public function index()
     {
-        return view('Jadwal.index');
+        $data['trainers'] = Trainer::orderBy('id','desc');
+        return view('Trainer_Member.index', $data);
     }
 
     /**
@@ -41,10 +42,10 @@ class JadwalController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Jadwal  $jadwal
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Jadwal $jadwal)
+    public function show($id)
     {
         //
     }
@@ -52,10 +53,10 @@ class JadwalController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Jadwal  $jadwal
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Jadwal $jadwal)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +65,10 @@ class JadwalController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Jadwal  $jadwal
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Jadwal $jadwal)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +76,10 @@ class JadwalController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Jadwal  $jadwal
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Jadwal $jadwal)
+    public function destroy($id)
     {
         //
     }

@@ -7,7 +7,7 @@
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title col-10">Quick Example</h3>
-                <a class="btn btn-danger col-2" href="{{url('/member')}}"> Back</a>
+                <a class="btn btn-danger col-2" href="#"> Back</a>
               </div>
                 @if(session('status'))
                 <div class="alert alert-success mb-1 mt-1">
@@ -16,7 +16,7 @@
                 @endif
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{route('member.store')}}" method="POST" enctype="multipart/form-data">
+              <form action="{{route('trainer.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
@@ -27,17 +27,17 @@
                     @enderror
                   </div>
                   <div class="form-group">
-                    <label for="InputAlamat">Alamat</label>
-                    <input type="text" class="form-control" name="alamat" placeholder="Masukkan Alamat">
-                  </div>
-                    @error('alamat')
-                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
-                    <div class="form-group">
-                    <label for="InputNo_telp">No Telpon</label>
+                    <label for="InputAlamat">No Telpon</label>
                     <input type="string" class="form-control" name="no_telp" placeholder="Masukkan Nomor Telpon">
                   </div>
                     @error('no_telp')
+                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                    <div class="form-group">
+                    <label for="InputNo_telp">Jenis Kelamin</label>
+                    <input type="text" class="form-control" name="jenis_kelamin" placeholder="Masukkan Jenis Kelamin">
+                  </div>
+                    @error('jenis_kelamin')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
@@ -48,14 +48,22 @@
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                    <label for="InputPassword">Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="Masukkan Password">
+                    <label for="InputDetail">Detail</label>
+                    <input type="text" class="form-control" name="detail" placeholder="Masukkan Detail">
                   </div>
-                    @error('password')
+                    @error('detail')
+                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                    <div class="form-group">
+                    <label for="InputImage">Image :</label>
+                    <input type="file" class="form-control" name="image" placeholder="Masukkan Image">
+                  </div>
+                    @error('detail')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                 </div>
                 <!-- /.card-body -->
+
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>

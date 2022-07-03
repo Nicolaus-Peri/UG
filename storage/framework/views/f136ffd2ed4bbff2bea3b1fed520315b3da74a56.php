@@ -17,7 +17,7 @@
                 <?php endif; ?>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="#" method="POST" enctype="multipart/form-data">
+              <form action="<?php echo e(route('member.store')); ?>" method="POST" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <div class="card-body">
                   <div class="form-group">
