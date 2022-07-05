@@ -52,6 +52,5 @@
 <!-- JAVASCRIPT -->
 <?php echo $__env->make('layouts.backend-include.javascript', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <!-- Page specific script -->
-<?php echo $__env->yieldPushContent('script'); ?>
 </body>
 </html><?php /**PATH C:\xampp\htdocs\undergroundblog\resources\views/layouts/backend-jadwal/app.blade.php ENDPATH**/ ?>

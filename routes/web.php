@@ -8,6 +8,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TrainerController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\TrainerMemberController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AppController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +31,6 @@ Route::resource('/member', MemberController::class);
 Route::resource('/trainer', TrainerController::class);
 Route::resource('/jadwal', JadwalController::class);
 Route::resource('/trainermember', TrainerMemberController::class);
+Route::resource('/profile', ProfileController::class);
+Route::resource('/app', AppController::class);
+Route::resource('/news', NewsController::class);

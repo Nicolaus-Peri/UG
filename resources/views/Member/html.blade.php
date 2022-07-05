@@ -31,6 +31,7 @@
                   <td>{{ $member->alamat }}</td>
                   <td>{{ $member->no_telp }}</td>
                   <td>
+                  <form action="{{ route('member.destroy',$member->id) }}" method="Post">
                   <a class="btn btn-primary" href="{{route('member.edit', $member)}}">Edit</a>
                   @csrf
                   </form>

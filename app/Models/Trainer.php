@@ -11,4 +11,8 @@ class Trainer extends Model
     protected $fillable = [
         'nama', 'no_telp', 'jenis_kelamin', 'email' , 'detail', 'image'
     ];
+
+    public function jadwal(){
+        return $this->belongsTo(Jadwal::class);
+    }
 }

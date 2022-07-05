@@ -31,6 +31,7 @@
                   <td><?php echo e($member->alamat); ?></td>
                   <td><?php echo e($member->no_telp); ?></td>
                   <td>
+                  <form action="<?php echo e(route('member.destroy',$member->id)); ?>" method="Post">
                   <a class="btn btn-primary" href="<?php echo e(route('member.edit', $member)); ?>">Edit</a>
                   <?php echo csrf_field(); ?>
                   </form>

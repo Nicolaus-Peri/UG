@@ -14,7 +14,7 @@ class TrainerMemberController extends Controller
      */
     public function index()
     {
-        $data['trainers'] = Trainer::orderBy('id','desc');
+        $data['trainers'] = Trainer::latest()->paginate(5);
         return view('Trainer_Member.index', $data);
     }
 
@@ -45,7 +45,7 @@ class TrainerMemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Trainer $trainer)
     {
         //
     }
@@ -56,7 +56,7 @@ class TrainerMemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Trainer $trainer)
     {
         //
     }
@@ -68,7 +68,7 @@ class TrainerMemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Trainer $trainer)
     {
         //
     }
@@ -79,7 +79,7 @@ class TrainerMemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Trainer $trainer)
     {
         //
     }

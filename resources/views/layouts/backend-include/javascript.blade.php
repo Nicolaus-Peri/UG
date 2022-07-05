@@ -50,3 +50,30 @@
 <!-- fullCalendar 2.2.5 -->
 <script src="{{asset('assets/AdminLTE/plugins/moment/moment.min.js')}}"></script>
 <script src="{{asset('assets/AdminLTE/plugins/fullcalendar/main.js')}}"></script>
+<!-- Select2 -->
+<script src="{{asset('assets/AdminLTE/plugins/select2/js/select2.full.min.js')}}"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="{{asset('assets/AdminLTE/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js')}}"></script>
+<!-- InputMask -->
+<script src="{{asset('assets/AdminLTE/plugins/moment/moment.min.js')}}"></script>
+<script src="{{asset('assets/AdminLTE/plugins/inputmask/jquery.inputmask.min.js')}}"></script>
+<!-- date-range-picker -->
+<script src="{{asset('assets/AdminLTE/plugins/daterangepicker/daterangepicker.js')}}"></script>
+<!-- bootstrap color picker -->
+<script src="{{asset('assets/AdminLTE/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js')}}"></script>
+<!-- Bootstrap Switch -->
+<script src="{{asset('assets/AdminLTE/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
+<!-- BS-Stepper -->
+<script src="{{asset('assets/AdminLTE/plugins/bs-stepper/js/bs-stepper.min.js')}}"></script>
+<!-- dropzonejs -->
+<script src="{{asset('assets/AdminLTE/plugins/dropzone/min/dropzone.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+
+<script type="text/javascript">
+                    $(function() {
+                    $('#datetimepicker').datetimepicker();
+                    });
+                  </script>

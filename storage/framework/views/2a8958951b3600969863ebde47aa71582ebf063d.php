@@ -16,7 +16,7 @@
     <?php echo $__env->make('layouts.backend-include.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <!-- /.navbar -->
   <!-- SIDEBAR -->
-  <?php echo $__env->make('layouts.backend-include.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php echo $__env->make('layouts.backend-include.sidebar_member', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <!-- / .sidebar -->
 
   <!-- Content Wrapper. Contains page content -->

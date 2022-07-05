@@ -11,7 +11,6 @@
     @endif
     <div class="card-body">
       <p class="login-box-msg">Register a new membership</p>
-
       <form action="{{route('register.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="input-group mb-3">
@@ -23,6 +22,28 @@
           </div>
         </div>
         @error('nama')
+        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+        @enderror
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="alamat" placeholder="Alamat">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-home"></span>
+            </div>
+          </div>
+        </div>
+        @error('alamat')
+        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+        @enderror
+        <div class="input-group mb-3">
+          <input type="string" class="form-control" name="no_telp" placeholder="Nomor Telpon">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-phone"></span>
+            </div>
+          </div>
+        </div>
+        @error('no_telp')
         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
         @enderror
         <div class="input-group mb-3">
@@ -68,9 +89,9 @@
           <div class="col-4">
             <button type="submit" class="btn btn-primary btn-block">Register</button>
           </div>
+          </form>
           <!-- /.col -->
         </div>
-      </form>
 
       <div class="social-auth-links text-center">
         <a href="#" class="btn btn-block btn-primary">

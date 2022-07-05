@@ -16,7 +16,7 @@
     @include('layouts.backend-include.navbar')
   <!-- /.navbar -->
   <!-- SIDEBAR -->
-  @include('layouts.backend-include.sidebar')
+  @include('layouts.backend-include.sidebar_member')
   <!-- / .sidebar -->
 
   <!-- Content Wrapper. Contains page content -->

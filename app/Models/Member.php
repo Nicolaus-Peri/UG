@@ -2,16 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
-    use HasFactory;
-    
-    protected $fillable = ['nama','alamat','no_telp','email','password','join_date','isActive','exit_date'];
+    use Notifiable;
 
-    protected $hidden = ['password','remember_token',];
+        protected $guard = 'writer';
 
-    protected $casts = ['email_verified_at' => 'datetime',];
+        protected $fillable = [
+            'nama', 'email', 'password', 'alamat', 'no_telp','join_date','isActive','exit_date'
+        ];
+
+        protected $hidden = [
+            'password', 'remember_token',
+        ];
 }

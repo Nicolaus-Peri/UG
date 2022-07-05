@@ -34,7 +34,7 @@
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                    <label for="InputNo_telp">Jenis Kelamin</label>
+                    <label for="InputJenis_kelamin">Jenis Kelamin</label>
                     <input type="text" class="form-control" name="jenis_kelamin" placeholder="Masukkan Jenis Kelamin">
                   </div>
                     @error('jenis_kelamin')
@@ -58,7 +58,7 @@
                     <label for="InputImage">Image :</label>
                     <input type="file" class="form-control" name="image" placeholder="Masukkan Image">
                   </div>
-                    @error('detail')
+                    @error('image')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                 </div>

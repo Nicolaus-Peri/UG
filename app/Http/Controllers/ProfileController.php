@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Member;
+use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
@@ -13,7 +16,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('Profile.index');
+        $data['news'] = News::latest()->paginate('5');
+        $data['member'] = DB::table('members')
+                          ->get();
+        return view('Profile.index', $data);
     }
 
     /**

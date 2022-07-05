@@ -7,7 +7,7 @@
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title col-10">Quick Example</h3>
-                <a class="btn btn-danger col-2" href="#"> Back</a>
+                <a class="btn btn-danger col-2" href="<?php echo e(url('/member')); ?>"> Back</a>
               </div>
                 <?php if(session('status')): ?>
                 <div class="alert alert-success mb-1 mt-1">
@@ -92,7 +92,6 @@ endif;
 unset($__errorArgs, $__bag); ?>
                 </div>
                 <!-- /.card-body -->
-
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
