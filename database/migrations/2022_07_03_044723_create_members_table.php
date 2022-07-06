@@ -19,12 +19,13 @@ return new class extends Migration
             $table->text('alamat');
             $table->string('no_telp');
             $table->string('email');
-            $table->timestamp('email_verfied_at')->nullable;
+            $table->timestamp('email_verfied_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->dateTime('join_date');
             $table->boolean('isActive');
             $table->dateTime('exit_date');
+            $table->boolean('is_admin')->nullable();
             $table->timestamps();
         });
     }

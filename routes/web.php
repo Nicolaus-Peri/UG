@@ -24,13 +24,14 @@ use App\Http\Controllers\NewsController;
 */
 
 
-Route::get('/', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
 Route::resource('/register', RegisterController::class);
-Route::resource('/dashboard', DashboardController::class);
-Route::resource('/member', MemberController::class);
-Route::resource('/trainer', TrainerController::class);
-Route::resource('/jadwal', JadwalController::class);
-Route::resource('/trainermember', TrainerMemberController::class);
-Route::resource('/profile', ProfileController::class);
-Route::resource('/app', AppController::class);
-Route::resource('/news', NewsController::class);
+Route::resource('/dashboard', DashboardController::class)->middleware('auth');
+Route::resource('/member', MemberController::class)->middleware('auth');
+Route::resource('/trainer', TrainerController::class)->middleware('auth');
+Route::resource('/jadwal', JadwalController::class)->middleware('auth');
+Route::resource('/trainermember', TrainerMemberController::class)->middleware('auth');
+Route::resource('/profile', ProfileController::class)->middleware('auth');
+Route::resource('/app', AppController::class)->middleware('auth');
+Route::resource('/news', NewsController::class)->middleware('auth');
