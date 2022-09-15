@@ -16,7 +16,7 @@
   <!-- /.navbar -->
 
     <!-- SIDEBAR -->
-    @include('layouts.backend-include.sidebar')
+    @include('layouts.backend-include.sidebar_member')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -29,8 +29,8 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Home</a></li>
-              <li class="breadcrumb-item active">Contacts</li>
+              <li class="breadcrumb-item"><a href="{{url('/profile')}}">Home</a></li>
+              <li class="breadcrumb-item active">Trainer List</li>
             </ol>
           </div>
         </div>

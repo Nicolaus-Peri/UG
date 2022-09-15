@@ -6,7 +6,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title col-10">Quick Example</h3>
+                <h3 class="card-title col-10">Create Data Member</h3>
                 <a class="btn btn-danger col-2" href="<?php echo e(url('/member')); ?>"> Back</a>
               </div>
                 <?php if(session('status')): ?>
@@ -90,6 +90,13 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+                    <div class="form-group">
+                    <label for="isActive">Active</label> 
+                    <input type="checkbox" class="form-control col-2" name="isActive" id="isActive" value="1">
+                    <label for="isAdmin" for="isAdmin">Admin</label>
+                    <input type="checkbox" class="form-control col-2" name="isAdmin" id="isAdmin" value="1">
+                  </div>
+                    
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">

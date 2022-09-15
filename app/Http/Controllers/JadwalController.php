@@ -30,10 +30,10 @@ class JadwalController extends Controller
      */
     public function create()
     {
+        $data['jadwal'] = Jadwal::latest()->paginate(10);
         $data['app'] = DB::table('apps')
                         ->where('category', 'gym_attr')
                         ->where('type', 'training_type')
-                        ->orderBy('priority')
                         ->get();
         $data['trainer'] = DB::table('trainers')
                         ->get();
@@ -78,9 +78,13 @@ class JadwalController extends Controller
      * @param  \App\Models\Jadwal  $jadwal
      * @return \Illuminate\Http\Response
      */
-    public function edit(Jadwal $jadwal)
+    public function edit($jadwal)
     {
-        return view('Jadwal.index_edit', compact('jadwal'));
+        $app = DB::table('apps')
+            ->get();
+        $trainer = DB::table('trainers')
+            ->get();
+        return view('Jadwal.index_edit', compact('jadwal', 'app', 'trainer'));
     }
 
     /**

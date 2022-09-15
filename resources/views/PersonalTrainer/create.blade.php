@@ -6,8 +6,8 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title col-10">Quick Example</h3>
-                <a class="btn btn-danger col-2" href="#"> Back</a>
+                <h3 class="card-title col-10">Create New Trainer</h3>
+                <a class="btn btn-danger col-2" href="{{url('/trainer')}}"> Back</a>
               </div>
                 @if(session('status'))
                 <div class="alert alert-success mb-1 mt-1">
@@ -27,7 +27,7 @@
                     @enderror
                   </div>
                   <div class="form-group">
-                    <label for="InputAlamat">No Telpon</label>
+                    <label for="InputNo_Telp">No Telpon</label>
                     <input type="string" class="form-control" name="no_telp" placeholder="Masukkan Nomor Telpon">
                   </div>
                     @error('no_telp')

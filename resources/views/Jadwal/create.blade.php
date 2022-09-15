@@ -3,7 +3,7 @@
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default col-6">
           <div class="card-header">
-            <h3 class="card-title">Jadwal</h3>
+            <h3 class="card-title"> Create Jadwal</h3>
 
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -15,47 +15,47 @@
             </div>
           </div>
           <!-- /.card-header -->
+          <div class="card-body">
           <form action="{{route('jadwal.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
-          <div class="card-body">
             <div class="row">
               <div class="col-md-8">
                 <div class="form-group">
                   <label>Day</label>
-                  <div class="form-group">
-                  <label>Date and time:</label>
-                    <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime"/>
-                        <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                    </div>
-                </div>
+                  <select class="form-control select2bs4" style="width: 100%;" name="day">
+                    <option value="Senin">Senin</option>
+                    <option value="Selasa">Selasa</option>
+                    <option value="Rabu">Rabu</option>
+                    <option value="Kamis">Kamis</option>
+                    <option value="Jumat">Jumat</option>
+                    <option value="Sabtu">Sabtu</option>
+                    <option value="Minggu">Minggu</option>
+                  </select>
                     @error('day')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group">
                   <label>Jenis Latihan</label>
-                  <select class="form-control select2bs4" style="width: 100%;" name="str_value">
+                  <select class="form-control select2bs4" style="width: 100%;" name="jenis">
                   @foreach($app as $app)
-                    <option value="{{ $app->str_value }}">{{ $app->description }}</option>
+                    <option value="{{ $app->jenis }}">{{ $app->description }}</option>
                   @endforeach
                   </select>
-                  @error('str_value')
+                  @error('jenis')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                 </div>
                   <div class="form-group">
                   <label>Trainer</label>
-                  <select class="form-control select2bs4" style="width: 100%;" id="nama">
+                  <select class="form-control select2bs4" style="width: 100%;" name="trainer">
                   @foreach($trainer as $trainer)
-                    <option value="{{ $trainer->id }}">{{ $trainer->nama }}</option>
+                    <option value="{{ $trainer->nama }}">{{ $trainer->nama }}</option>
                   @endforeach
                   </select>
-                  @error('nama')
+                  @error('trainer')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
+                  @enderror
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <!-- /.form-group -->

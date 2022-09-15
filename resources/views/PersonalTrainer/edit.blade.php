@@ -6,8 +6,8 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title col-10">Quick Example</h3>
-                <a class="btn btn-danger col-2" href="#"> Back</a>
+                <h3 class="card-title col-10">Edit Data Trainer</h3>
+                <a class="btn btn-danger col-2" href="{{url('/trainer')}}"> Back</a>
               </div>
                 @if(session('status'))
                 <div class="alert alert-success mb-1 mt-1">

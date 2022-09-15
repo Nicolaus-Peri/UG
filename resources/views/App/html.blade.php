@@ -5,7 +5,7 @@
               <!-- /.card-header -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title col-10">DataTable with default features</h3>
+                <h3 class="card-title col-10">Apps Table</h3>
                   <a class="btn btn-success col-2" href="{{route('app.create')}}">Create</a>
               </div>
               <!-- /.card-header -->
@@ -20,9 +20,8 @@
                   <th>ID</th>
                   <th>Category</th>
                   <th>Type</th>
-                  <th>str_value</th>
-                  <th>int_value</th>
-                  <th>Priority</th>
+                  <th>Jenis</th>
+                  <th>Harga</th>
                   <th>Description</th>
                   <th>Image</th>
                   <th width="280px">Action</th>
@@ -33,9 +32,8 @@
                   <td>{{ $apps->perPage() * ($apps->currentPage()-1) + $count }}</td>
                   <td>{{ $app->category }}</a></td>
                   <td>{{ $app->type }}</td>
-                  <td>{{ $app->str_value }}</td>
+                  <td>{{ $app->jenis }}</td>
                   <td>{{ $app->int_value }}</td>
-                  <td>{{ $app->priority }}</td>
                   <td>{{ $app->description }}</td>
                   <td><img src="/image/{{ $app->image }}" width="100px"></td>
                   <td>

@@ -28,10 +28,6 @@
 <script src="<?php echo e(asset('assets/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')); ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo e(asset('assets/AdminLTE/dist/js/adminlte.js')); ?>"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?php echo e(asset('assets/AdminLTE/dist/js/demo.js')); ?>"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo e(asset('assets/AdminLTE/dist/js/pages/dashboard.js')); ?>"></script>
 <!-- bs-custom-file-input -->
 <script src="<?php echo e(asset('assets/AdminLTE/plugins/bs-custom-file-input/bs-custom-file-input.min.js')); ?>"></script>
 <!-- DataTables  & Plugins -->
@@ -71,9 +67,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
-
-<script type="text/javascript">
-                    $(function() {
-                    $('#datetimepicker').datetimepicker();
-                    });
-                  </script><?php /**PATH C:\xampp\htdocs\undergroundblog\resources\views/layouts/backend-include/javascript.blade.php ENDPATH**/ ?>
+<script src="<?php echo e(asset('assets/AdminLTE/plugins/chart.js/Chart.min.js')); ?>"></script>
+<?php /**PATH C:\xampp\htdocs\undergroundblog\resources\views/layouts/backend-include/javascript.blade.php ENDPATH**/ ?>

@@ -39,9 +39,8 @@ class AppController extends Controller
         $request->validate([
             'category' => 'nullable',
             'type' => 'nullable',
-            'str_value' => 'nullable',
+            'jenis' => 'nullable',
             'int_value' => 'nullable',
-            'priority' => 'nullable',
             'description' => 'nullable',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -94,9 +93,8 @@ class AppController extends Controller
         $request->validate([
             'category' => 'nullable',
             'type' => 'nullable',
-            'str_value' => 'nullable',
+            'jenis' => 'nullable',
             'int_value' => 'nullable',
-            'priority' => 'nullable',
             'description' => 'nullable',
         ]);
   

@@ -22,10 +22,10 @@ return new class extends Migration
             $table->timestamp('email_verfied_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->dateTime('join_date');
-            $table->boolean('isActive');
-            $table->dateTime('exit_date');
-            $table->boolean('is_admin')->nullable();
+            $table->dateTime('join_date')->nullable();
+            $table->boolean('isActive')->nullable()->default(false);
+            $table->dateTime('exit_date')->nullable();
+            $table->boolean('isAdmin')->nullable()->default(false);
             $table->timestamps();
         });
     }

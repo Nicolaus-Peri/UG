@@ -11,9 +11,9 @@ class Jadwal extends Model
     protected $fillable = ['day', 'trainer', 'str_value'];
 
     public function apps(){
-        return $this->hasOne(App::class);
+        return $this->hasMany(App::class);
     }
     public function trainers(){
-        return $this->hasOne(Trainer::class);
+        return $this->hasMany(Trainer::class);
     }
 }

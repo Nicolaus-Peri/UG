@@ -2,7 +2,7 @@
 <div class="register-box">
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+      <a href="../../index2.html" class="h1">Underground Fitness Club</a>
     </div>
     <?php if(session('status')): ?>
     <div class="alert alert-success mb-1 mt-1">
@@ -12,7 +12,6 @@
     <?php endif; ?>
     <div class="card-body">
       <p class="login-box-msg">Register a new membership</p>
-
       <form action="<?php echo e(route('register.store')); ?>" method="POST" enctype="multipart/form-data">
         <?php echo csrf_field(); ?>
         <div class="input-group mb-3">
@@ -105,43 +104,14 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Retype password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-              <label for="agreeTerms">
-               I agree to the <a href="#">terms</a>
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
           <div class="col-4">
             <button type="submit" class="btn btn-primary btn-block">Register</button>
           </div>
           </form>
           <!-- /.col -->
         </div>
-
-      <div class="social-auth-links text-center">
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i>
-          Sign up using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i>
-          Sign up using Google+
-        </a>
-      </div>
-
-      <a href="<?php echo e(url('/')); ?>" class="text-center">I already have a membership</a>
+      <a href="<?php echo e(url('/login')); ?>" class="text-center">I already have a membership</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->

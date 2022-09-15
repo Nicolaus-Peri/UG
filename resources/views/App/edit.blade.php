@@ -6,8 +6,8 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title col-10">Quick Example</h3>
-                <a class="btn btn-danger col-2" href="#"> Back</a>
+                <h3 class="card-title col-10">Edit Apps</h3>
+                <a class="btn btn-danger col-2" href="{{url('/app')}}"> Back</a>
               </div>
                 @if(session('status'))
                 <div class="alert alert-success mb-1 mt-1">
@@ -36,7 +36,7 @@
                     @enderror
                     <div class="form-group">
                     <label for="Inputstr_value">str_value</label>
-                    <input type="integer" class="form-control" name="str_value" value="{{$app->str_value}}" placeholder="Masukkan str_value">
+                    <input type="integer" class="form-control" name="jenis" value="{{$app->str_value}}" placeholder="Masukkan str_value">
                     </div>
                     @error('str_value')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -46,13 +46,6 @@
                     <input type="integer" class="form-control" name="int_value" value="{{$app->int_value}}" placeholder="Masukkan int_value">
                     </div>
                     @error('int_value')
-                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
-                    <div class="form-group">
-                    <label for="InputPriority">Priority</label>
-                    <input type="string" class="form-control" name="priority" value="{{$app->priority}}" placeholder="Masukkan Priority">
-                    </div>
-                    @error('Priority')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                     <div class="form-group">

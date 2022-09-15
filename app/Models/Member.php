@@ -13,10 +13,16 @@ class Member extends Authenticatable
         protected $guard = 'writer';
 
         protected $fillable = [
-            'nama', 'email', 'password', 'alamat', 'no_telp','join_date','isActive','exit_date', 'is_admin',
+            'nama', 'email', 'password', 'alamat', 'no_telp','join_date','isActive','exit_date', 'isAdmin',
         ];
 
         protected $hidden = [
             'password', 'remember_token',
         ];
+    
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class);
+    }
+
 }

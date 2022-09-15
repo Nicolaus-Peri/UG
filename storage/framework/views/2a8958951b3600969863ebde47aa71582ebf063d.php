@@ -13,7 +13,7 @@
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
-    <?php echo $__env->make('layouts.backend-include.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('layouts.backend-include.navbar_member', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <!-- /.navbar -->
   <!-- SIDEBAR -->
   <?php echo $__env->make('layouts.backend-include.sidebar_member', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -26,13 +26,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Project Detail</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Project Detail</li>
-            </ol>
+            <h1>My Profile</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->

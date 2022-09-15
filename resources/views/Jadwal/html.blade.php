@@ -5,7 +5,7 @@
               <!-- /.card-header -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title col-10">DataTable with default features</h3>
+                <h3 class="card-title col-10">Data Table Jadwal</h3>
                   <a class="btn btn-success col-2" href="{{route('jadwal.create')}}">Create</a>
               </div>
               <!-- /.card-header -->
@@ -19,8 +19,8 @@
                   <tr>
                   <th>ID</th>
                   <th>Day</th>
-                  <th>str_value</th>
-                  <th>trainer</th>
+                  <th>Jenis</th>
+                  <th>Trainer</th>
                   <th width="280px">Action</th>
                   </tr>
                   <?php $count = 1; ?> 

@@ -6,7 +6,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title col-10">Quick Example</h3>
+                <h3 class="card-title col-10">Add Apps</h3>
                 <a class="btn btn-danger col-2" href="{{url('/app')}}"> Back</a>
               </div>
                 @if(session('status'))
@@ -34,24 +34,17 @@
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                    <label for="InputStr_value">str_value</label>
-                    <input type="string" class="form-control" name="str_value" placeholder="Masukkan str_value">
+                    <label for="InputStr_value">Jenis</label>
+                    <input type="string" class="form-control" name="jenis" placeholder="Masukkan Jenis">
                   </div>
                     @error('str_value')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                    <label for="InputInt_value">int_value</label>
-                    <input type="integer" class="form-control" name="int_value" placeholder="Masukkan int_value">
+                    <label for="InputInt_value">Harga</label>
+                    <input type="integer" class="form-control" name="int_value" placeholder="Masukkan Harga">
                   </div>
                     @error('int_value')
-                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
-                    <div class="form-group">
-                    <label for="InputPriotity">Priority</label>
-                    <input type="string" class="form-control" name="priority" placeholder="Masukkan Priority">
-                  </div>
-                    @error('priority')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                     <div class="form-group">

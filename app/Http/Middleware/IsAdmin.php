@@ -15,10 +15,12 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()->is_admin == 1){
+        if(Auth::check() && Auth::user()->isAdmin == '1') {
             return $next($request);
+        } else {
+            return redirect ('/profile');
         }
     
-        return redirect(‘home’)->with(‘error’,"You don't have admin access.");
+        return redirect('/login');
     }
 }

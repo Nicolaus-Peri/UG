@@ -22,12 +22,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Calendar</h1>
+            <h1>Jadwal</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Calendar</li>
+              <li class="breadcrumb-item"><a href="<?php echo e(url('/jadwal')); ?>">Home</a></li>
+              <li class="breadcrumb-item active">Jadwal</li>
             </ol>
           </div>
         </div>
@@ -52,5 +52,6 @@
 <!-- JAVASCRIPT -->
 <?php echo $__env->make('layouts.backend-include.javascript', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <!-- Page specific script -->
+<?php echo $__env->yieldPushContent('script'); ?>
 </body>
 </html><?php /**PATH C:\xampp\htdocs\undergroundblog\resources\views/layouts/backend-jadwal/app.blade.php ENDPATH**/ ?>

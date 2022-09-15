@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewsMail;
 use App\Models\News;
+use App\Models\Member;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
 
 class NewsController extends Controller
 {
@@ -115,6 +120,7 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
+
     public function destroy(News $news)
     {
         $news->delete();

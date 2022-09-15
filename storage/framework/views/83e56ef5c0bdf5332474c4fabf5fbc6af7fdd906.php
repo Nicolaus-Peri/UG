@@ -3,7 +3,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Projects Detail</h3>
+          <h3 class="card-title">Profile</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -18,44 +18,54 @@
           <div class="row">
             <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
               <div class="row">
-                <div class="col-12 col-sm-4">
+                <div class="col-12 col-sm-6">
+                  <form action="<?php echo e(route('checkIn')); ?>" method="POST" enctype="multipart/form-data">
+                    <?php echo csrf_field(); ?>
                   <div class="info-box bg-light">
                     <div class="info-box-content">
-                      <span class="info-box-text text-center text-muted">Estimated budget</span>
-                      <span class="info-box-number text-center text-muted mb-0">2300</span>
+                    <?php if(session('error')): ?>
+                      <div class="alert alert-danger">
+                          <b>Opps!</b> <?php echo e(session('error')); ?>
+
+                      </div>
+                    <?php endif; ?>
+                    <?php if(session('success')): ?>
+                      <div class="alert alert-danger">
+                          <b>Selamat!!</b> <?php echo e(session('success')); ?>
+
+                      </div>
+                    <?php endif; ?>
+                      <input type="hidden" name="user_id" value="<?php echo e(Auth::user()->id); ?>"/>
+                      <button type="submit" class="btn btn-primary">Check In</button>
                     </div>
                   </div>
+                  </form>
                 </div>
-                <div class="col-12 col-sm-4">
+                <div class="col-12 col-sm-6">
+                  <form action="<?php echo e(route('checkOut')); ?>" method="POST" enctype="multipart/form-data">
+                    <?php echo csrf_field(); ?>
                   <div class="info-box bg-light">
                     <div class="info-box-content">
-                      <span class="info-box-text text-center text-muted">Total amount spent</span>
-                      <span class="info-box-number text-center text-muted mb-0">2000</span>
+                      <input type="hidden" name="user_id" value="<?php echo e(Auth::user()->id); ?>">
+                      <button type="submit" class="btn btn-danger">Check Out</button>
                     </div>
                   </div>
-                </div>
-                <div class="col-12 col-sm-4">
-                  <div class="info-box bg-light">
-                    <div class="info-box-content">
-                      <span class="info-box-text text-center text-muted">Estimated project duration</span>
-                      <span class="info-box-number text-center text-muted mb-0">20</span>
-                    </div>
-                  </div>
+                  </form>
                 </div>
               </div>
               <div class="row">
                 <div class="col-12">
-                  <h4>Recent Activity</h4>
+                  <h4>Info Terbaru</h4>
                   <?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $news): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="post">
                       <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="/image/<?php echo e($news->image); ?>" alt="user image">
                         <span class="username">
                           <a href="#"><?php echo e($news->title); ?></a>
                         </span>
                         <span class="description"><?php echo e($news->update_at); ?></span>
                       </div>
                       <!-- /.user-block -->
+                      <img class="img-circle img-bordered-sm" src="/image/<?php echo e($news->image); ?>" alt="user image">
                       <p><?php echo e($news->description); ?></p>
                     </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -63,39 +73,16 @@
                 </div>
             </div>
             <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
-              <h3 class="text-primary"><i class="fas fa-paint-brush"></i> AdminLTE v3</h3>
-              <p class="text-muted">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</p>
+              <h3 class="text-primary"><i class="fas fa-user"></i> <?php echo e(Auth::user()->nama); ?></h3>
+              <p class="text-muted"><?php echo e(Auth::user()->email); ?></p>
               <br>
               <div class="text-muted">
-                <p class="text-sm">Client Company
-                  <b class="d-block">Deveint Inc</b>
+                <p class="text-sm">Alamat
+                  <b class="d-block"><?php echo e(Auth::user()->alamat); ?></b>
                 </p>
-                <p class="text-sm">Project Leader
-                  <b class="d-block">Tony Chicken</b>
+                <p class="text-sm">Nomor Telpon
+                  <b class="d-block"><?php echo e(Auth::user()->no_telp); ?></b>
                 </p>
-              </div>
-
-              <h5 class="mt-5 text-muted">Project files</h5>
-              <ul class="list-unstyled">
-                <li>
-                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i> Functional-requirements.docx</a>
-                </li>
-                <li>
-                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-pdf"></i> UAT.pdf</a>
-                </li>
-                <li>
-                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-envelope"></i> Email-from-flatbal.mln</a>
-                </li>
-                <li>
-                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-image "></i> Logo.png</a>
-                </li>
-                <li>
-                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i> Contract-10_12_2014.docx</a>
-                </li>
-              </ul>
-              <div class="text-center mt-5 mb-3">
-                <a href="#" class="btn btn-sm btn-primary">Add files</a>
-                <a href="#" class="btn btn-sm btn-warning">Report contact</a>
               </div>
             </div>
           </div>

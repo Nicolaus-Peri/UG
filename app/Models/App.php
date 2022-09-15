@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class App extends Model
 {
     use HasFactory;
-    protected $fillable = ['category', 'type', 'str_value', 'int_value', 'priority', 'description', 'image'];
+    protected $fillable = ['category', 'type', 'jenis', 'int_value', 'description', 'image'];
 
     public function jadwal(){
         return $this->belongsTo(Jadwal::class);

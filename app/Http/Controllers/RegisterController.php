@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Validation\RegisterRequest;
+use App\Mail\VerificationEmail;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -16,16 +20,6 @@ class RegisterController extends Controller
     public function index()
     {
         return view('Register.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -52,52 +46,10 @@ class RegisterController extends Controller
         $member->isActive = false;
         $member->join_date = date('Y-m-d H:i:s');
         $member->exit_date = date('Y-m-d H:i:s');
+        $member->remember_token = Str::random(32);
+        $member->isAdmin = false;
         $member->save();
-        return redirect('/');
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Member $member)
-    {
-        return redirect('/');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect('/login');
     }
 }

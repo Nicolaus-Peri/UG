@@ -5,7 +5,7 @@
               <!-- /.card-header -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title col-10">DataTable with default features</h3>
+                <h3 class="card-title col-10">Data Member</h3>
                   <a class="btn btn-success col-2" href="{{route('member.create')}}">Create</a>
               </div>
               <!-- /.card-header -->
@@ -27,14 +27,11 @@
                   @foreach ($members as $member )
                   <tr>
                   <td>{{ $members->perPage() * ($members->currentPage()-1) + $count }}</td>
-                  <td><a href="{{url('/dashboard')}}" class="nav-link">{{ $member->nama }}</a></td>
+                  <td><a href="{{url('/profile')}}" class="nav-link">{{ $member->nama }}</a></td>
                   <td>{{ $member->alamat }}</td>
                   <td>{{ $member->no_telp }}</td>
                   <td>
-                  <form action="{{ route('member.destroy',$member->id) }}" method="Post">
                   <a class="btn btn-primary" href="{{route('member.edit', $member)}}">Edit</a>
-                  @csrf
-                  </form>
                   </td>
                   </tr>
                   <?php $count++; ?>

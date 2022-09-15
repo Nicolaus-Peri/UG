@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Session;
+use Carbon\Carbon;
 use App\Models\Member;
 use App\Models\News;
+use App\Models\Attendance;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -17,74 +21,28 @@ class ProfileController extends Controller
     public function index()
     {
         $data['news'] = News::latest()->paginate('5');
-        $data['member'] = DB::table('members')
-                          ->get();
+        $data['member'] = auth()->user();
         return view('Profile.index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function checkIn(Request $request)
     {
-        //
+        if(Auth::check() && Auth::user()->isActive == '1') {
+            $attendance = new Attendance;
+            $user_id = auth()->user()->id;
+            $attendance->user_id = $request->input('user_id');
+            $attendance->day = Carbon::now()->toDateString();
+            $attendance->time_in = Carbon::now()->toTimeString();
+            $attendance->save();
+            Session::flash('success', 'Anda berhasil Check In');
+            return redirect('profile');
+        } else {
+            Session::flash('error', 'Account Anda belum akif');
+            return redirect('profile');
+        }
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function checkOut(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect('profile');
     }
 }

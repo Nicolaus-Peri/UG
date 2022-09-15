@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('type')->nullable();
             $table->string('str_value')->nullable();
             $table->integer('int_value')->nullable();
-            $table->integer('priority')->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

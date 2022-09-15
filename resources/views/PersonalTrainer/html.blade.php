@@ -5,7 +5,7 @@
               <!-- /.card-header -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title col-10">DataTable with default features</h3>
+                <h3 class="card-title col-10">Data Table Trainer</h3>
                   <a class="btn btn-success col-2" href="{{route('trainer.create')}}">Create</a>
               </div>
               <!-- /.card-header -->
@@ -22,7 +22,7 @@
                   <th>No Telp</th>
                   <th>Jenis Kelamin</th>
                   <th>Detail</th>
-                  <th>Image</th>
+                  <th>Foto</th>
                   <th width="280px">Action</th>
                   </tr>
                   <?php $count = 1; ?> 

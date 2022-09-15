@@ -50,9 +50,10 @@ class MemberController extends Controller
         $member->no_telp = $request->no_telp;
         $member->email = $request->email;
         $member->password = Hash::make($request->password);
-        $member->isActive = false;
+        $member->isActive = $request->isActive;
         $member->join_date = date('Y-m-d H:i:s');
         $member->exit_date = date('Y-m-d H:i:s');
+        $member->isAdmin = $request->isAdmin;
         $member->save();
         return redirect('member');
     }
@@ -101,6 +102,8 @@ class MemberController extends Controller
         $member->no_telp = $request->no_telp;
         $member->email = $request->email;
         // $member->password = $request->password;
+        $member->isAdmin = $request->isAdmin;
+        $member->isActive = $request->isActive;
         $member->save();
         return redirect('member');
     }

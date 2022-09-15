@@ -6,8 +6,8 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title col-10">Quick Example</h3>
-                <a class="btn btn-danger col-2" href="#"> Back</a>
+                <h3 class="card-title col-10">Edit Data Member</h3>
+                <a class="btn btn-danger col-2" href="{{url('/member')}}"> Back</a>
               </div>
                 @if(session('status'))
                 <div class="alert alert-success mb-1 mt-1">
@@ -48,16 +48,14 @@
                     @error('email')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
-                    <!-- <div class="form-group">
-                    <label for="InputPassword">Password</label>
-                    <input type="password" class="form-control" name="password" value="{{$member->password}}" placeholder="Masukkan Password">
+                    <div class="form-group">
+                    <label for="isActive">Active</label> 
+                    <input type="checkbox" class="form-control col-2" name="isActive" id="isActive" value="1"<?php echo ($member->isActive == 1 ? ' checked' : '')?>>
+                    <label for="isAdmin" for="isAdmin">Admin</label>
+                    <input type="checkbox" class="form-control col-2" name="isAdmin" id="isAdmin" value="1"<?php echo ($member->isAdmin == 1 ? ' checked' : '')?>>
                   </div>
-                    @error('password')
-                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror -->
                 </div>
-                <!-- /.card-body -->
-
+                <!-- /.card-body -->              
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
